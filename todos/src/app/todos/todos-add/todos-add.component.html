@@ -1,0 +1,5 @@
+<h2>Add a ToDo</h2>
+<form action="" autocomplete="off" class="w3-card-4 w3-padding">
+    <input type="text" class="w3-input" name="todo" [(ngModel)]="todo.message" placeholder="todo" />
+    <div class="w3-padding"><span class="w3-button w3-pale-green w3-hover-green" (click)="save(todo)">Save</span></div>
+</form>

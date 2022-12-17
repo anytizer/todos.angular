@@ -1,0 +1,12 @@
+<h2>List of my ToDos</h2>
+<table class="w3-table-all" *ngIf="todos.length>0">
+    <tr *ngFor="let todo of todos; let t = index;" class="w3-padding" [ngClass]="{'w3-pale-green': todo.completed}">
+        <td>
+            <span (click)="todo.completed=!todo.completed" class="w3-button w3-green w3-hover-green" *ngIf="todo.completed">&check;</span>
+            <span (click)="todo.completed=!todo.completed" class="w3-button w3-pale-green w3-hover-pale-green" *ngIf="!todo.completed">&times;</span>
+        </td>
+        <td> {{todo.message}}</td>
+        <td><span class="w3-button w3-pale-red w3-hover-red" (click)="delete(t)">&times;</span></td>
+    </tr>
+</table>
+<div *ngIf="todos.length<=0">Nothing to display.</div>
